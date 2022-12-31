@@ -86,3 +86,49 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// Title
+
+console.log('Financial Analysis');
+
+// sum of total month
+
+console.log('Total month: ' + finances.length);
+
+
+//calculate the total of the profits/loss
+
+    //make a variable to only calculate the numbers as strings can not be calculate
+    //make a loop to calculate the total of  all the number element in the array
+
+    let total = 0;
+
+for (let i = 0; i < finances.length; i++) { // loop to go through all the array and calculate the total
+    const [date, amount] = finances[i];
+
+    total += amount;
+    
+}
+
+console.log('Total: ' + total);
+
+
+    
+    
+//calculate the average change in profit/loss
+
+    //make an array to store each profit/loss change
+    //create a loop to go through each value of the array
+    //calculate each change by substracting the following month by the preceding month
+    // push the result for each change in the array
+    
+    //create a loop to calulate the total of the number element in the new array (same as exercise 1)
+    //divided the total by the number of element in the array 
+
+
+
+    let gapMonth = []; //new array
+
+// calculate the greatest profit 
+    //push in the array with the change the month
+    //find the greatest with the formula 
