@@ -110,7 +110,7 @@ for (let i = 0; i < finances.length; i++) { // loop to go through all the array 
     
 }
 
-console.log('Total: ' + total);
+console.log('Total: $' + total);
 
 
     
@@ -125,9 +125,42 @@ console.log('Total: ' + total);
     //create a loop to calulate the total of the number element in the new array (same as exercise 1)
     //divided the total by the number of element in the array 
 
-
+// make an array to calculate each changes in profit/loss
 
     let gapMonth = []; //new array
+
+    for (let i = 0; i < finances.length - 1; i++) {
+    
+    
+
+        gap = finances[i+1][1] - finances[i][1]; //looop to go through the finances array and calculate each change. [i+1] because we start with 2nd month - 1st month
+    
+        gapMonth.push([finances[i+1][0], gap]); //push the change calculated (let gap) in the new array. Finances[i+1][0] is to push the month with it.
+        
+    }
+    
+    console.log(gapMonth);
+
+
+
+// calcul the average gap 
+
+    let average = 0;
+
+for (let i = 0; i < gapMonth.length; i++) { // loop to go through all the array and calculate the total like in first exercise
+    const [date2, gap2] = gapMonth[i];
+
+    average += gap2;
+    
+}
+
+let totalAverage = average/gapMonth.length;
+
+let roundAverage = totalAverage.toFixed(2); // to round the number to 2 decimals
+
+console.log('Average Change: $' + roundAverage);
+
+
 
 // calculate the greatest profit 
     //push in the array with the change the month
