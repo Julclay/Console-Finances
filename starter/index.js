@@ -139,7 +139,7 @@ console.log('Total: $' + total);
         
     }
     
-    console.log(gapMonth);
+   
 
 
 
@@ -162,6 +162,54 @@ console.log('Average Change: $' + roundAverage);
 
 
 
-// calculate the greatest profit 
+// calculate the greatest and smallest in  profit 
     //push in the array with the change the month
     //find the greatest with the formula 
+
+    // greatest increase
+
+let greatest = 0; // variable to find the greatest profit in the array gapMonth
+let monthGreatest = ''; // variable to find the month related to the greatest profit in the array
+
+for (let i = 0; i < gapMonth.length; i++) { //loop to go through all items in the array gapMonth
+    let [date3, gap3] = gapMonth[i];
+
+    
+
+    if (gap3 > greatest) { // each time a value in the array is bigger than the let greatest the value is sotred in the varialbe
+
+
+        greatest = gap3;
+        monthGreatest = date3 // to store the related month in another variable because it is a string
+
+    }
+    
+}
+
+console.log('Greatest Increase in Profits: ' +  monthGreatest + ' '+ '($' + greatest + ')');
+
+
+
+
+// greatest decrease
+
+
+let smallest = 0;
+let monthSmallest = '';
+
+for (let i = 0; i < gapMonth.length; i++) {
+    let [date4, gap4] = gapMonth[i];
+
+    
+
+    if (gap4 < smallest) {
+
+
+        smallest = gap4;
+        monthSmallest = date4;
+
+    }
+    
+}
+
+console.log('Greatest Decrease in Profits: ' + monthSmallest+ ' '+ '($' + smallest + ')');
